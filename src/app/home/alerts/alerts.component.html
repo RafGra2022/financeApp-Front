@@ -1,0 +1,29 @@
+<div class="alerts" *ngIf="userObservable|async as input">
+
+    <div class="alert alert-danger" role="alert" *ngIf="input.userLength==false">
+        -Wprowadzona nazwa zbyt krótka!
+
+    </div>
+
+    <div class="alert alert-danger" role="alert" *ngIf="input.userAlphaNum==false">
+        -Wprowadzona nazwa powinna zawierać litery i liczby!
+    </div>
+
+</div>
+
+<div class="alerts" *ngIf="passwordObservable|async as input">
+
+    <div class="alert alert-danger" role="alert" *ngIf="input.passwordLength==false">
+        -Hasło zbyt krótkie!
+    </div>
+
+    <div class="alert alert-danger" role="alert" *ngIf="input.passwordAlphaNum==false">
+        -Hasło powinno zawierać litery i liczby!
+    </div>
+
+    <div class="alert alert-danger" role="alert" *ngIf="this.isPassword==false">
+        -Hasła nie są takie same!
+    </div>
+
+
+</div>

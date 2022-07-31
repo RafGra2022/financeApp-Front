@@ -1,0 +1,34 @@
+
+.table{
+    margin-bottom: auto;
+    left: 50vw;
+    transform: translate(-50%,0%);
+    border: 2px solid transparent;
+    border-bottom: solid transparent;
+    border-radius: 20px;
+    position: fixed;
+    color: black;
+    background-color: lavenderblush;
+    opacity: 0.9;
+    width:70vw;
+}
+.alert {
+    margin-top: 2%;
+    margin-bottom: auto;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    border: 2px solid transparent;
+    border-radius: 20px;
+    position: relative;
+    color: black;
+    background-color: #50637a;
+    opacity: 0.9;
+    width: 70vw;
+}
+.btn{
+    position: absolute;
+    padding-top:1px;
+    padding-bottom: 1px;
+    right: 30px;
+    bottom: 9px;
+}

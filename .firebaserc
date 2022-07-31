@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "financeapp-b2858": {
+      "hosting": {
+        "financeManager": [
+          "financeapp-b2858"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "financeapp-b2858"
+  }
+}

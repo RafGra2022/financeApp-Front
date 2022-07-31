@@ -1,0 +1,24 @@
+<div class="register">
+    <div class="form-group" id="content">
+
+        <input [formControl]="user" aria-describedby="emailHelp" class="form-control" id="user"
+               placeholder="Użytkownik"
+               type="text">
+
+        <app-alerts [userObservable]="userObservable"></app-alerts>
+
+        <input [formControl]="password" class="form-control" id="password1" placeholder="Hasło"
+               type="password">
+
+        <input [formControl]="passwordConfirm" class="form-control" id="password2" placeholder="Powtórz hasło"
+               type="password">
+
+        <app-alerts [passwordObservable]="passwordObservable" [isPassword]="isPassword"></app-alerts>
+
+        <div class="button">
+            <button (click)="register()" [disabled]="!isUser || !isPassword" class="btn btn-primary" type="button">Zarejestruj</button>
+        </div>
+
+    </div>
+    <app-responses [userExist]="userExist"></app-responses>
+</div>

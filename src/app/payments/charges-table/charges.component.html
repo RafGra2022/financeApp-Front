@@ -1,0 +1,29 @@
+<div >
+
+    <ngb-alert type="dark" [dismissible]="false">
+        <strong>Rachunki za prąd</strong>
+        <button class="btn btn-info" type="button" (click)="add()" >Dodaj</button>
+    </ngb-alert>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">Rachunek</th>
+            <th scope="col">Rozliczenie za okres</th>
+            <th scope="col">Termin płatności</th>
+            <th scope="col">Kwota</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let payment of payments ; let i = index">
+            <th scope="row">{{i+1}}</th>
+            <td>{{payment.from}}{{"-"}}{{payment.to}}</td>
+            <td>{{payment.term}}</td>
+            <td>{{payment.sum}}</td>
+          <td><app-delete></app-delete></td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+<input type="text" placeholder="id"/>

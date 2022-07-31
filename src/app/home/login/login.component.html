@@ -1,0 +1,18 @@
+<div class="login" >
+    <div class="form-group" id="content">
+
+        <input [formControl]="user" aria-describedby="emailHelp" class="form-control" id="user" placeholder="Użytkownik"
+               type="text">
+
+        <app-alerts [userObservable]="userObservable"></app-alerts>
+
+        <input [formControl]="password" class="form-control" id="password1" placeholder="Hasło" type="password">
+        <app-alerts [passwordObservable]="passwordObservable" [isPassword]="isPasswordEqual" ></app-alerts>
+
+        <div class="button" >
+            <button (click)="login()" [disabled]="!isUser || !isPassword" class="btn btn-primary" type="button">Zaloguj
+            </button>
+        </div>
+    </div>
+    <app-responses [badUser]="badUser"></app-responses>
+</div>

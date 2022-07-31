@@ -1,0 +1,14 @@
+<form class="row row-cols-sm-auto">
+    <div class="col-12">
+        <div class="input-group">
+            <div class="rightside2">
+                <input [value]="date"
+                       class="form-control" placeholder="dd-mm-yyyy"
+                       name="dp" ngbDatepicker #d="ngbDatepicker" [disabled]="true">
+            </div>
+            <button class="btn btn-outline-secondary calendar" (click)="calendarToggle()"></button>
+            <ngb-datepicker (dateSelect)="datePicked($event)" class="bg-light" [hidden]="!isCalendarVisible"
+                            #d="ngbDatepicker"></ngb-datepicker>
+        </div>
+    </div>
+</form>

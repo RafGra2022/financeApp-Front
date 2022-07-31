@@ -1,0 +1,83 @@
+<app-advice
+  (isFormVisible)="this.visibilityProperties.isFormVisible=$event;this.visibilityProperties.isAdviceVisible = false;"
+  [hidden]=!visibilityProperties.isAdviceVisible></app-advice>
+
+<div class="form-data" id="all" [hidden]="!visibilityProperties.isFormVisible">
+
+  <div class="form-group" id="content">
+    <div class="row">
+      <div class="col">
+        <div class="period1">
+          <strong>Okres rozliczeniowy</strong>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="amount">
+          <strong>Od:</strong>
+        </div>
+      </div>
+      <div class="col">
+        <app-calendar (calendarOpen)=" this.visibilityProperties.secondCalendarVisible = false;
+                                       this.visibilityProperties.thirdCalendarVisible = false;
+                                       this.visibilityProperties.firstCalendarVisible = !this.visibilityProperties.firstCalendarVisible;"
+                      (ngbDate)="this.paymentProperties.from = this.dateFormatter.ngbToDate($event);
+                                 this.paymentExposition.from = this.dateFormatter.dateFormat($event);"
+                      [isCalendarVisible]="visibilityProperties.firstCalendarVisible"></app-calendar>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="amount">
+          <strong>Do:</strong>
+        </div>
+      </div>
+      <div class="col">
+        <app-calendar (calendarOpen)="this.visibilityProperties.firstCalendarVisible = false;
+                                      this.visibilityProperties.thirdCalendarVisible = false;
+                                      this.visibilityProperties.secondCalendarVisible = !this.visibilityProperties.secondCalendarVisible;"
+                      (ngbDate)="this.paymentProperties.to = this.dateFormatter.ngbToDate($event);
+                                 this.paymentExposition.to = this.dateFormatter.dateFormat($event);"
+                      [isCalendarVisible]="visibilityProperties.secondCalendarVisible"></app-calendar>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="amount">
+          <strong>Termin płatności:</strong>
+        </div>
+      </div>
+      <div class="col">
+        <app-calendar (calendarOpen)="this.visibilityProperties.firstCalendarVisible = false;
+                                      this.visibilityProperties.secondCalendarVisible = false;
+                                      this.visibilityProperties.thirdCalendarVisible = !this.visibilityProperties.thirdCalendarVisible;"
+                      (ngbDate)="this.paymentProperties.term = this.dateFormatter.ngbToDate($event);
+                                 this.paymentExposition.term = this.dateFormatter.dateFormat($event);"
+                      [isCalendarVisible]="visibilityProperties.thirdCalendarVisible"></app-calendar>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="amount">
+          <strong>Kwota do zapłaty:</strong>
+        </div>
+      </div>
+      <div class="col">
+        <div class="rightside">
+          <input (input)="sum($event)" class="form-control" id="password1" placeholder="Kwota"
+                 type="text">
+        </div>
+      </div>
+    </div>
+    <div class="button">
+      <button (click)="add()" class="btn btn-info" type="button">Dodaj</button>
+    </div>
+  </div>
+</div>
+
+
+<app-charges [hidden]="!visibilityProperties.isTableVisible"
+             (isTableVisible)="this.visibilityProperties.isTableVisible=$event"
+             (isFormVisible)="this.visibilityProperties.isFormVisible=$event;this.visibilityProperties.isAdviceVisible = false;"
+             [payments]="paymentsView"></app-charges>

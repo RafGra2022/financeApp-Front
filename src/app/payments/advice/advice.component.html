@@ -1,0 +1,16 @@
+<div class="alert" [hidden]="!logger.isUserLogged">
+    <p>
+        <ngb-alert type="info" [dismissible]="false">
+            <strong>Uwaga:</strong> Wygląda na to, że nie dodałeś jeszcze żadnych rachunków
+        </ngb-alert>
+
+        <button class="btn btn-primary" type="button" (click)="add()">Dodaj</button>
+    </p>
+</div>
+<div class="alert" [hidden]="logger.isUserLogged">
+    <p>
+        <ngb-alert type="info" [dismissible]="false">
+            <strong>Uwaga:</strong> Nie jesteś zalogowany! Zaloguj się, żeby korzystać z funkcjonalności serwisu :)
+        </ngb-alert>
+    </p>
+</div>

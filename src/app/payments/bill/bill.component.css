@@ -1,0 +1,41 @@
+#content {
+    position: relative;
+}
+
+#all {
+    background-color: #4a6c7a;
+    background-blend-mode: color;
+    opacity: 0.95;
+    color: whitesmoke;
+}
+
+.form-data {
+    margin-top: 70px;
+    background-color: transparent;
+    opacity: 1;
+    text-align: center;
+    position: relative;
+    left: 50vw;
+    transform: translate(-50%, 0%);
+    min-width: 400px;
+    padding: 20px;
+    border: 2px solid cadetblue;
+    border-radius: 20px;
+    width: min-content;
+}
+
+.form-control {
+    position: relative;
+    margin-top: 20px;
+}
+
+.button {
+    margin-top: 50px;
+    margin-left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+.amount {
+    margin-top: 25px;
+    text-align: left;
+}
